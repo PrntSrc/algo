@@ -28,7 +28,7 @@ public class Queue<T> {
             front = rear = node;
         } else {
             rear.next = node;
-            rear = rear.next;
+            rear = node;
         }
 
     }

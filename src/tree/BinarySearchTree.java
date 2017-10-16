@@ -1,5 +1,8 @@
 package tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Created by Yue on 2017/10/12.
  */
@@ -113,18 +116,79 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         return root;
     }
 
-    public void printTree() {
-        if (isEmpty())
-            System.out.println("tree is empty");
-        else 
-            printTree(this.root);
+    public int height() {
+        return height(this.root);
     }
 
-    private void printTree(BinaryNode<T> root) {
+    private int height(BinaryNode<T> root) {
+        if (root == null)
+            return -1;
+        else
+            return 1 + Math.max(height(root.left), height(root.right));
+    }
+
+    public void preOrderWalk() {
+        if (isEmpty())
+            System.out.println("tree is empty");
+        else
+            preOrderWalk(this.root);
+    }
+
+    private void preOrderWalk(BinaryNode<T> root) {
         if (root != null) {
-            printTree(root.left);
             System.out.println(root);
-            printTree(root.right);
+            preOrderWalk(root.left);
+            preOrderWalk(root.right);
+        }
+    }
+
+    public void inOrderWalk() {
+        if (isEmpty())
+            System.out.println("tree is empty");
+        else
+            inOrderWalk(this.root);
+    }
+
+    private void inOrderWalk(BinaryNode<T> root) {
+        if (root != null) {
+            inOrderWalk(root.left);
+            System.out.println(root);
+            inOrderWalk(root.right);
+        }
+    }
+
+    public void postOrderWalk() {
+        if (isEmpty())
+            System.out.println("tree is empty");
+        else
+            postOrderWalk(this.root);
+    }
+
+    private void postOrderWalk(BinaryNode<T> root) {
+        if (root != null) {
+            postOrderWalk(root.left);
+            postOrderWalk(root.right);
+            System.out.println(root);
+        }
+    }
+
+    public void layerOrderWalk() {
+        if (isEmpty())
+            System.out.println("tree is empty");
+        else
+            layerOrderWalk(this.root);
+    }
+
+    private void layerOrderWalk(BinaryNode<T> root) {
+        Queue<BinaryNode<T>> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            BinaryNode<T> node = queue.poll();
+            System.out.println(node.element);
+            if (node.left != null)
+                queue.add(node.left);
+            if (node.right != null)
+                queue.add(node.right);
         }
     }
 }
