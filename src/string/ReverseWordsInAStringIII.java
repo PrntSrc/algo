@@ -17,12 +17,13 @@ public class ReverseWordsInAStringIII {
         char[] cs = s.toCharArray();
         StringBuilder res = new StringBuilder();
         for (int i = 0; i < cs.length;  i++) {
-            if (cs[i] != ' ' && i != cs.length - 1)
+            if (cs[i] != ' ')
                 stack.push(cs[i]);
-            else {
+            if (cs[i] == ' ' || i == cs.length - 1) {
                 while (!stack.empty())
                     res.append(stack.pop());
-                res.append(' ');
+                if (i != cs.length - 1)
+                    res.append(' ');
             }
         }
         return res.toString();
