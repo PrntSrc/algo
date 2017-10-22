@@ -1,4 +1,4 @@
-package List;
+package list;
 
 /**
  * Created by Yue on 2017/10/14.
