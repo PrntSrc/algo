@@ -1,9 +1,8 @@
+package mod;
+
 import java.math.BigInteger;
 
-/**
- * Created by Yue on 2017/10/13.
- */
-public class Main {
+public class BigIntegerMod {
     public static void main(String[] args) {
         BigInteger i = new BigInteger("5");
         BigInteger exponent = new BigInteger("100");
