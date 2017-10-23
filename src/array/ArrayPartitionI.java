@@ -9,7 +9,6 @@ public class ArrayPartitionI {
         int[] nums = new int[] {1, 4, 2, 3};
         System.out.println(arrayPairSum(nums));
     }
-
     public static int arrayPairSum(int[] nums) {
         int sum = 0;
         Arrays.sort(nums);
