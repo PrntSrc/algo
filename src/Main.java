@@ -5,9 +5,17 @@ import java.math.BigInteger;
  */
 public class Main {
     public static void main(String[] args) {
-        BigInteger i = new BigInteger("5");
-        BigInteger exponent = new BigInteger("100");
-        BigInteger m = new BigInteger("7");
-        System.out.println(i.modPow(exponent, m));
+        int[] bits = new int[] {1, 1, 1, 0};
+        System.out.println(isOneBitCharacter(bits));
+    }
+
+    public static boolean isOneBitCharacter(int[] bits) {
+        for (int i = 0; i < bits.length; i++) {
+            if (bits[i] == 1)
+                i += 1;
+            else if (i == bits.length - 1)
+                return true;
+        }
+        return false;
     }
 }
