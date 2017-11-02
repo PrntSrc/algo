@@ -6,16 +6,21 @@ import java.math.BigInteger;
 public class Main {
     public static void main(String[] args) {
         int[] bits = new int[] {1, 1, 1, 0};
-        System.out.println(isOneBitCharacter(bits));
+//        System.out.println(isOneBitCharacter(bits));
     }
 
-    public static boolean isOneBitCharacter(int[] bits) {
-        for (int i = 0; i < bits.length; i++) {
-            if (bits[i] == 1)
-                i += 1;
-            else if (i == bits.length - 1)
-                return true;
-        }
-        return false;
-    }
+//    public static boolean isOneBitCharacter(int[] nums) {
+//        if (nums.length != 0) {
+//            for (int i = 1; i < nums.length; i++) {
+//                int temp = nums[i], j = i;
+//                if (nums[j - 1] > temp) {
+//                    while (j >= 1 && nums[j - 1] > temp) {
+//                        nums[j] = nums[j - 1];
+//                        j--;
+//                    }
+//                    nums[j] = temp;
+//                }
+//            }
+//        }
+//    }
 }
