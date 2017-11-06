@@ -7,13 +7,12 @@ package greedy;
 public class NonDecreasingArray {
 
     public static boolean checkPossibility(int[] nums) {
-        if (nums.length <= 2)
-            return true;
         int count = 0;
-        for (int i = 0; i < nums.length - 1 && count <= 1; i++) {
-            if (nums[i] > nums[i + 1]) {
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i - 1] > nums[i]) {
                 count++;
-                nums[i] = nums[i + 1];
+                if (i - 2 < 0 || nums[i - 2] <= nums[i]) nums[i - 1] = nums[i];
+                else nums[i] = nums[i - 1];
             }
         }
         return count <= 1;
