@@ -5,8 +5,9 @@ import java.math.BigInteger;
  */
 public class Main {
     public static void main(String[] args) {
-        int[] bits = new int[] {1, 1, 1, 0};
-//        System.out.println(isOneBitCharacter(bits));
+        String s1 = new String("hello");
+        String s2 = new String("hello");
+        System.out.println(s1.equals(s2));
     }
 
 //    public static boolean isOneBitCharacter(int[] nums) {
